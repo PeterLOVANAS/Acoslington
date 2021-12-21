@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Peter Lovanas
-- 👀 I’m interested in coding with Python (and C++)
+- 👀 I’m interested in coding with Python (and C++, to be honest, just Arduino coding)
 - 🌱 I’m currently learning on advance coding with python to solve more great problems
 #- 💞️ I’m looking to collaborate on ...
 #- 📫 How to reach me ...
