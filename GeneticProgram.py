@@ -4,133 +4,7 @@ import random
 import string
 # print(SS.Subset({"A", "a" , "B" , "b"}))
 
-'''
-def LowerUpper(A1 = str , A2 = str):
-    try:
-        if A1 == A2.lower() or A1 == A2.upper():
-            return True
-        else:
-            return False
-    except (ValueError  , TypeError):
-        return "There has some issue"
-'''
-'''
-def CheckEle(S1 = set):
-    Slst=  list(S1)
-    # lower = map(lambda ele : ele.lower() , Slst)
-    for i in Slst:
-        Test = Slst.count(i)
-        if Test  == 1 :
-            lowerlst = list(map(lambda ele : ele.lower() , Slst))
-            print(lowerlst)
-            for i1 in lowerlst:
-                Test2 = lowerlst.count(i1)
-                if Test2 ==  1:
-                    pass
-                elif Test2 > 1  :
-                    return False
-        elif Test > 1:
-            return False
 
-
-    Anslst = []
-    # Check whether the element is the lowercase or copy of another element in the set or list or not
-    # for i in Slst:
-
-        # if i
-        # if i in lower or i in Anslst:
-
-
-
-# print(LowerUpper("z" , "S"))
-# print(set("ABC"))
-# print(len({5, 4,3}))
-def Permutation_Expo(S = str):
-    Strlen = len(S)
-    Meiolen = Strlen / 2
-    StrSet = set(S)
-    Sub = SS.Subset(StrSet)  #It will return a list
-    print(Sub)
-    emplst = []
-    for i in Sub:
-        if len(i) == Meiolen:
-            if CheckEle(i) == False:
-                pass
-            elif CheckEle(i) == True:
-                emplst.append(i)
-        elif len(i) != Meiolen:
-            pass
-
-
-print(Permutation_Expo("AaBb"))
-'''
-
-'''
-def ExpoPermu(Gene = str):
-    try:
-        lstp = ["AA" , "Bb", "cc"] 
-        lst0 = lstp.copy()
-        # Split String into pair
-        lstStr = list(lst0[0])
-        lst1 = []
-        lst2 = []
-        # Fstr = lst0[0]
-        for i1 in range(1):
-            for i2 in lstp.pop(0):
-                for i3 in i2:
-                    # lst1.append(lstStr[i1])
-                    # lst1.append(lstStr[i1])
-'''
-'''
-lstp = ["AA" , "Bb", "Cc", "DD"]
-lspc=  lstp.copy()
-lstStr = list(lstp[0])
-lst1 = [lstStr[0]]
-lst2 = lst1.copy()
-emplst=  []
-lspc.pop(0)
-for i in lspc :
-    for i1 in i:
-        x = list(map(lambda n : n + i1 , lst1))
-        emplst.append(x)
-    Ans1 = emplst[0] + emplst[-1]
-    lst1 = Ans1.copy()
-    Ans1.clear()
-    emplst.clear()
-
-
-
-print(lst1)
-'''
-'''
-lstp = ["Aa" , "Bb","Cc"]
-lspc=  lstp.copy()
-lstStr = list(lstp[0])
-Anslst = []
-
-
-for i3 in [0,1]:
-    lst1 = [lstStr[i3]]
-    lst2 = lst1.copy()
-    emplst=  []
-    lspc.pop(0)
-    for i in lspc :
-        for i1 in i:
-            x = list(map(lambda n : n + i1 , lst1))
-            emplst.append(x)
-        Ans1 = emplst[0] + emplst[-1]
-        lst1 = Ans1.copy()
-        Ans1.clear()
-        emplst.clear()
-
-    Anslst.append(lst1.copy())
-    lst1.clear()
-    lst2.clear()
-    lspc = lstp.copy()
-Answer = Anslst[0] + Anslst[-1]
-print(Answer)
-print(len(Answer))
-'''
 
 def Split(Str = str , num  = int):
     Anslst = []
@@ -450,48 +324,30 @@ class itpt: #Interpretetion of an array
 
 
 
+if __name__ == '__main__':
+    obj1 = itpt("BbSs" , Combine("BbSs", "BbSs") , {"B" : "Black" , "b": "Brown" , "S" : "Short" , "s" : "Long"} )
+    print(obj1.Genotype())
+    print(obj1.Geno_to_Pheno())
+    print(obj1.Phenotype(condi = ["Brown" , "Short"] ))
+    print(obj1.Pheno_to_Geno(condi = ["Black" , "Short"]  ))
+    # The count is specific for the BbSs  not the other genotype that have same Phenotype
+    # Note : Change the Phenodict to object attribute
 
-obj1 = itpt("BbSs" , Combine("BbSs", "BbSs") , {"B" : "Black" , "b": "Brown" , "S" : "Short" , "s" : "Long"} )
-print(obj1.Genotype())
-print(obj1.Geno_to_Pheno())
-print(obj1.Phenotype(condi = ["Brown" , "Short"] ))
-print(obj1.Pheno_to_Geno(condi = ["Black" , "Short"]  ))
-# The count is specific for the BbSs  not the other genotype that have same Phenotype
-# Note : Change the Phenodict to object attribute
+    obj2 = itpt("Aa" , Combine("aa" , "aa") , {"A" : "Tall" , "a" : "Short"})
+    print(obj2.Genotype()) #Output : 0 (No this Genotype, "Aa", inside the combination )
+    print(obj2.Geno_to_Pheno()) #Output : ['Tall']
+    print(obj2.Phenotype(condi = ["Short"])) #No releted to condi in the attribute
+    print(obj2.Pheno_to_Geno(condi = ["Short"]))
 
-obj2 = itpt("Aa" , Combine("aa" , "aa") , {"A" : "Tall" , "a" : "Short"})
-print(obj2.Genotype()) #Output : 0 (No this Genotype, "Aa", inside the combination )
-print(obj2.Geno_to_Pheno()) #Output : ['Tall']
-print(obj2.Phenotype(condi = ["Short"])) #No releted to condi in the attribute
-print(obj2.Pheno_to_Geno(condi = ["Short"]))
+    obj3 = itpt("AAbbccDd" , Combine("AABbCcDd" , "AaBbCcDd" ) , {"A" : "Tall" , "a" : "Short" , "B" : ""})
+    print(obj3.Genotype())
+    print("")
+    print(Combine("Aabb" , "AABb"))
+    obj4 = itpt("TtRR" , Combine("TtRr" , "TtRr") , {"T" : "Tall" , "t" : "Short" , "R" : "Yellow" , "r" : "red"})
+    print(obj4.Phenotype(condi = ["Tall" , "Yellow"]))
+    print(obj4.Phenotype(condi = ["Short" , "Yellow"]))
+    obj5 = itpt("AaBBccDd" , Combine("AaBbCcDD" , "AaBbccDd") , {"A" : "Tall"})
+    print(obj5.Genotype())
+    obj6 = itpt("AaBB" , Combine("AaBb" , "AaBb") , {"A" : "White" , "a" : "Black" , "B" :"Long" , "b" : "Short"})
+    print(obj6.Phenotype(condi = ["Black" , "Long"]))
 
-obj3 = itpt("AAbbccDd" , Combine("AABbCcDd" , "AaBbCcDd" ) , {"A" : "Tall" , "a" : "Short" , "B" : ""})
-print(obj3.Genotype())
-# print(Combine("AABbCcDd" , "AaBbCcDd"))
-print("")
-print(Combine("Aabb" , "AABb"))
-obj4 = itpt("TtRR" , Combine("TtRr" , "TtRr") , {"T" : "Tall" , "t" : "Short" , "R" : "Yellow" , "r" : "red"})
-print(obj4.Phenotype(condi = ["Tall" , "Yellow"]))
-print(obj4.Phenotype(condi = ["Short" , "Yellow"]))
-obj5 = itpt("AaBBccDd" , Combine("AaBbCcDD" , "AaBbccDd") , {"A" : "Tall"})
-print(obj5.Genotype())
-obj6 = itpt("AaBB" , Combine("AaBb" , "AaBb") , {"A" : "White" , "a" : "Black" , "B" :"Long" , "b" : "Short"})
-print(obj6.Phenotype(condi = ["Black" , "Long"]))
-# print(Combine("AaBbCcDD" , "AaBbccDd").shape)
-# print(Combine("AaBbCcDD" , "AaBbccDd"))
-# print(Combine("AABbCCDd" , "AABBccDD"))
-# print(Permutation("AABbCCDd"))
-'''
-Anslst = []
-for i in range(16):
-    for i1 in range(16):
-        Arr = Combine("AABbCcDd" , "AaBbCcDd" )
-        if Arr[i1 , i] == "AAbbccDd":
-            Anslst.append((i1 , i , Arr[i1 , i]))
-        else:
-            pass
-print(Anslst)
-Arr = Combine("AABbCcDd" , "AaBbCcDd" )
-print(Arr)
-
-'''
