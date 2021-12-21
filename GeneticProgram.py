@@ -2,7 +2,7 @@ import numpy as np
 import SubSet as SS
 import random
 import string
-# print(SS.Subset({"A", "a" , "B" , "b"}))
+
 
 
 
@@ -109,7 +109,7 @@ print(len("Aa"))
 print(Combine("Aa" , "aa"))
 
 print(Combine("BbSs" , "BbSs"))
-# print(ReWrite("ABCdabCd"))
+
 
 class itpt: #Interpretetion of an array
     def __init__(self, condi , Arr , Phenodict= dict ):
@@ -132,8 +132,7 @@ class itpt: #Interpretetion of an array
         except(RuntimeError , ValueError):
             return "Problem during computation"
 
-# print(Genotype(Combine("Aa" , "aa")  , "Aa"))
-# print(Combine("Aa" , "aa"))
+
 
     def Geno_to_Pheno(self): #Transform into Phenotype
         try:
@@ -168,7 +167,7 @@ class itpt: #Interpretetion of an array
                         Ans = Phenodict.get(i[0])
                         Phenolst.append(Ans)
 
-            # RealAns = Phenolst.append(self.Genotype())
+            
             return Phenolst
         except(RuntimeError  , KeyError, ValueError):
             return "Problem occurs"
