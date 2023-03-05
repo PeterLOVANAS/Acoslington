@@ -1,3 +1,5 @@
+This repository contains code of many interesting python projects , modules ,or files that I have built
+
 - 👋 Hi, I’m Peter Lovanas
 - 👀 I’m interested in coding with Python (and C++, to be honest, just Arduino coding)
 - 🌱 I’m currently learning on advance coding with python to solve more great problems
@@ -9,4 +11,4 @@ PeterLOVANAS/PeterLOVANAS is a ✨ special ✨ repository because its `README.md
 You can click the Preview link to take a look at your changes.
 --->
 
-This repository contains code of many interesting python projects , modules ,or files that I have built
+
